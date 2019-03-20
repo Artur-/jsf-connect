@@ -1,0 +1,51 @@
+<ui:composition
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:h="http://java.sun.com/jsf/html"
+  xmlns:f="http://java.sun.com/jsf/core"
+  xmlns:p="http://primefaces.org/ui"
+  xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+  xmlns:sec="http://www.springframework.org/security/tags"
+>
+  <h:form>
+    <div class="authorization-div">
+      <sec:authorize access="hasRole('ROLE_USER')">
+        <p:outputLabel value="You have the USER role" />
+      </sec:authorize>
+      <sec:authorize access="hasRole('ROLE_ADMIN')">
+        <p:outputLabel value="You have the ADMIN role" />
+      </sec:authorize>
+    </div>
+
+    <ul>
+      <li>
+        <h:commandLink action="#{navigationController.showPage}" value="Home">
+          <f:param name="pageId" value="home" />
+        </h:commandLink>
+      </li>
+      <li>
+        <h:commandLink
+          action="#{navigationController.showPage}"
+          value="Dashboard"
+        >
+          <f:param name="pageId" value="dashboard" />
+        </h:commandLink>
+      </li>
+      <li>
+        <h:commandLink
+          action="#{navigationController.showPage}"
+          value="User admin (only for admins)"
+        >
+          <f:param name="pageId" value="user-admin" />
+        </h:commandLink>
+      </li>
+    </ul>
+  </h:form>
+
+  <h:form
+    onsubmit="this.action='#{request.contextPath}/logout';"
+    class="logout-form"
+  >
+    <p:commandButton value="Logout" ajax="false" />
+  </h:form>
+  <hr />
+</ui:composition>
