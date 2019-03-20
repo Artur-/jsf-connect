@@ -15,29 +15,25 @@
         <p:outputLabel value="You have the ADMIN role" />
       </sec:authorize>
     </div>
-
-    <ul>
+    <style>
+      .navi { display: flex; }
+      .navi > li {
+        display: block;
+        padding-right: 2em;
+      }
+    </style>
+    <ul class="navi">
       <li>
-        <h:commandLink action="#{navigationController.showPage}" value="Home">
-          <f:param name="pageId" value="home" />
-        </h:commandLink>
+        <a href="/home.xhtml">Home</a>
       </li>
       <li>
-        <h:commandLink
-          action="#{navigationController.showPage}"
-          value="Dashboard"
-        >
-          <f:param name="pageId" value="dashboard" />
-        </h:commandLink>
+        <a href="/dashboard.xhtml">Dashboard</a>
       </li>
-      <li>
-        <h:commandLink
-          action="#{navigationController.showPage}"
-          value="User admin (only for admins)"
-        >
-          <f:param name="pageId" value="user-admin" />
-        </h:commandLink>
-      </li>
+      <sec:authorize access="hasRole('ROLE_ADMIN')">
+        <li>
+          <a href="/user-admin.xhtml">User admin (only for admins)</a>
+        </li>
+      </sec:authorize>
     </ul>
   </h:form>
 
