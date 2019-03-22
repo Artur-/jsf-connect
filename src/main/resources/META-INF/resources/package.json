@@ -12,6 +12,7 @@
   "dependencies": {
     "@vaadin/vaadin-charts": "^6.2.1",
     "@vaadin/vaadin-grid": "^5.3.3",
-    "@webcomponents/webcomponentsjs": "^2.2.7"
+    "@webcomponents/webcomponentsjs": "^2.2.7",
+    "lit-element": "^2.1.0"
   }
 }

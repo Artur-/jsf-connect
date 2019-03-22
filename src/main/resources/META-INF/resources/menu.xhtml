@@ -27,9 +27,12 @@
         <a href="/home.xhtml">Home</a>
       </li>
       <li>
-        <a href="/dashboard.xhtml">Dashboard</a>
-      </li>
-      <sec:authorize access="hasRole('ROLE_ADMIN')">
+          <a href="/dashboard.xhtml">Dashboard</a>
+        </li>
+        <li>
+            <a href="/lit-view.xhtml">Lit view</a>
+          </li>
+            <sec:authorize access="hasRole('ROLE_ADMIN')">
         <li>
           <a href="/user-admin.xhtml">User admin (only for admins)</a>
         </li>
