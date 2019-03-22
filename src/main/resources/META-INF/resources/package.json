@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install": "./fix-vaadin-for-pika.js && npx @pika/web --optimize"
   },
   "keywords": [],
   "author": "",
@@ -14,5 +15,8 @@
     "@vaadin/vaadin-grid": "^5.3.3",
     "@webcomponents/webcomponentsjs": "^2.2.7",
     "lit-element": "^2.1.0"
+  },
+  "devDependencies": {
+    "replace-in-file": "^3.4.4"
   }
 }
