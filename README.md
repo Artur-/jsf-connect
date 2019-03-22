@@ -1,5 +1,3 @@
-# jsf-primefaces-spring-security
+# jsf-connect
 
-A detailed step-by-step tutorial on how to implement a PrimeFaces login page using Spring Security, Spring Boot, and Maven.
-
-[https://codenotfound.com/jsf-primefaces-spring-security-example.html](https://codenotfound.com/jsf-primefaces-spring-security-example.html)
+An example on how to integrate JSF + Lit Element + Vaadin Connect
