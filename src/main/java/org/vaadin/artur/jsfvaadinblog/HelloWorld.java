@@ -1,4 +1,4 @@
-package com.codenotfound.primefaces;
+package org.vaadin.artur.jsfvaadinblog;
 
 import javax.inject.Named;
 import org.springframework.security.core.Authentication;

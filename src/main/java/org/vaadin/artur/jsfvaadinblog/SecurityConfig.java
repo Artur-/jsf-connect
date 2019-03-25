@@ -1,4 +1,4 @@
-package com.codenotfound.primefaces;
+package org.vaadin.artur.jsfvaadinblog;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -13,14 +13,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
   protected void configure(HttpSecurity http) throws Exception {
     // require all requests to be authenticated except for the resources
     http.authorizeRequests().antMatchers("/javax.faces.resource/**")
-        .permitAll().antMatchers("/user-admin.xhtml")
-        .hasAnyRole("ADMIN").anyRequest().authenticated();
+        .permitAll()
+        .antMatchers("/admin/**").authenticated()
+        .antMatchers("/admin/blog-admin.xhtml").hasAnyRole("ADMIN")
+        .anyRequest().permitAll();
     // login
-    http.formLogin().loginPage("/login.xhtml").permitAll()
-        .failureUrl("/login.xhtml?error=true");
+    http.formLogin().loginPage("/admin/login.xhtml").permitAll()
+        .failureUrl("/admin/login.xhtml?error=true");
         
     // logout
-    http.logout().logoutSuccessUrl("/login.xhtml");
+    http.logout().logoutSuccessUrl("/blogposts.xhtml");
     // not needed as JSF 2.2 is implicitly protected against CSRF
     http.csrf().disable();
   }
@@ -30,6 +32,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
       throws Exception {
     auth.inMemoryAuthentication().withUser("user")
         .password("{noop}user").roles("USER").and()
-        .withUser("admin").password("{noop}admin").roles("ADMIN");
+        .withUser("admin").password("{noop}admin").roles("USER","ADMIN");
   }
 }

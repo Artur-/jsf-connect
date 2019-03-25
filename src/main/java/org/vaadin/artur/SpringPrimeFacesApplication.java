@@ -1,4 +1,4 @@
-package com.codenotfound;
+package org.vaadin.artur;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

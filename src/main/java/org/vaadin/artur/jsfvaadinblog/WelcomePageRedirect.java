@@ -1,4 +1,4 @@
-package com.codenotfound.primefaces;
+package org.vaadin.artur.jsfvaadinblog;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.Ordered;
@@ -12,7 +12,7 @@ public class WelcomePageRedirect implements WebMvcConfigurer {
   @Override
   public void addViewControllers(ViewControllerRegistry registry) {
     registry.addViewController("/")
-        .setViewName("forward:/home.xhtml");
+        .setViewName("forward:/blogposts.xhtml");
     registry.setOrder(Ordered.HIGHEST_PRECEDENCE);
   }
 }

@@ -11,11 +11,19 @@
   <h:head>
     <title>PrimeFaces Hello World Example</title>
     <h:outputStylesheet name="/css/main.css" />
-  </h:head>
+    <script src="/node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+    <script type="module" src="/web_modules/@vaadin/vaadin-grid.js"></script>
+     </h:head>
 
   <h:body>
-    <h1>Home</h1>
-    <hr />
     <ui:include src="menu.xhtml" />
+    <h1>Blog admin</h1>
+    <vaadin-grid id="grid">
+      <vaadin-grid-column path="name" header="Name"></vaadin-grid-column>
+      <vaadin-grid-column path="age" header="Age"></vaadin-grid-column>
+    </vaadin-grid>
+    <script>
+      grid.items = [ {name: 'John', age: 34}, {name: 'Jane', age: 20} ];
+    </script>
   </h:body>
 </html>

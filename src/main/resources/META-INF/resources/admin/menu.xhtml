@@ -1,0 +1,32 @@
+<ui:composition
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:h="http://java.sun.com/jsf/html"
+  xmlns:f="http://java.sun.com/jsf/core"
+  xmlns:p="http://primefaces.org/ui"
+  xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+  xmlns:sec="http://www.springframework.org/security/tags"
+>
+  <h:form>
+    <style>
+      .navi { display: flex; } .navi > li { display: block; padding-right: 2em;
+      }
+    </style>
+    <ul class="navi">
+      <sec:authorize access="hasRole('ROLE_USER')">
+        <li>
+          <a href="/admin/blogpost.xhtml">New blog posts</a>
+        </li>
+      </sec:authorize>
+      <sec:authorize access="hasRole('ROLE_ADMIN')">
+        <li>
+          <a href="/admin/blog-admin.xhtml">Blog posts</a>
+        </li>
+      </sec:authorize>
+      <li>
+        <a href="/logout">Logout</a>
+      </li>
+    </ul>
+  </h:form>
+
+  <hr />
+</ui:composition>
