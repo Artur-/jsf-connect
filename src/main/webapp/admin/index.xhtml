@@ -10,26 +10,19 @@
 >
   <h:head>
     <title>PrimeFaces Hello World Example</title>
-    <h:outputStylesheet name="/css/main.css" />
+    <link rel="stylesheet" href="#{request.contextPath}/css/main.css" />
+    <script
+      src="#{request.contextPath}/node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"
+    ></script>
+    <script
+      type="module"
+      src="#{request.contextPath}/web_modules/@vaadin/vaadin-grid.js"
+    ></script>
   </h:head>
 
   <h:body>
-    <a href="/admin/index.xhtml">Admin</a>
+    <ui:include src="menu.xhtml" />
 
-    <p:dataList
-      value="#{blogPostListing.blogPosts}"
-      var="blogpost"
-      type="definition"
-    >
-      <f:facet name="header">
-        Blog posts
-      </f:facet>
-      <p><b>#{blogpost.title}</b></p>
-      Published #{blogpost.publishTime} by #{blogpost.author}
-      <p>
-        <h:outputText value="#{blogpost.content}" escape="false" />
-      </p>
-      <hr />
-    </p:dataList>
+    Welcome to the administrative pages
   </h:body>
 </html>

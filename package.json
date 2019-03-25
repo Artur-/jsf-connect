@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "install": "./fix-vaadin-for-pika.js && npx @pika/web --optimize"
+    "install": "./fix-vaadin-for-pika.js && npx @pika/web --optimize --dest src/main/webapp/web_modules"
   },
   "keywords": [],
   "author": "",

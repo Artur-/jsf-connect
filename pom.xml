@@ -3,14 +3,10 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.codenotfound</groupId>
-  <artifactId>jsf-primefaces-spring-security</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <packaging>jar</packaging>
-
-  <name>jsf-primefaces-spring-security</name>
-  <description>JSF PrimeFaces Spring Security Example</description>
-  <url>https://codenotfound.com/jsf-primefaces-spring-security-example.html</url>
+  <groupId>org.vaadin.artur</groupId>
+  <artifactId>jsf-vaadin-blog</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <packaging>war</packaging>
 
   <parent>
     <groupId>org.springframework.boot</groupId>
@@ -51,6 +47,11 @@
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>
     </dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
+		</dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -70,6 +71,7 @@
  </dependencies>
 
   <build>
+  <finalName>${project.artifactId}</finalName>
     <plugins>
       <plugin>
         <groupId>org.springframework.boot</groupId>
@@ -94,8 +96,6 @@
         </executions>
         <configuration>
           <nodeVersion>v10.15.3</nodeVersion>
-          <installDirectory>.node</installDirectory>
-          <workingDirectory>src/main/resources/META-INF/resources</workingDirectory>
         </configuration>
 
     </plugin>
