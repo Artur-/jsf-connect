@@ -9,27 +9,30 @@
   xmlns:sec="http://www.springframework.org/security/tags"
 >
   <h:head>
-    <title>PrimeFaces Hello World Example</title>
+    <title>JSF Connect</title>
     <link rel="stylesheet" href="#{request.contextPath}/css/main.css" />
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans:700|PT+Serif" rel="stylesheet" />
   </h:head>
 
   <h:body>
-    <a href="#{request.contextPath}/admin/index.xhtml">Admin</a>
+    <header>
+      <h4>JSF Connection</h4>
+      <a href="#{request.contextPath}/admin/index.xhtml">Admin</a>
+    </header>
+    
 
     <p:dataList
       value="#{blogPostListing.blogPosts}"
       var="blogpost"
       type="definition"
     >
-      <f:facet name="header">
-        Blog posts
-      </f:facet>
-      <p><b>#{blogpost.title}</b></p>
-      Published #{blogpost.publishTime} by #{blogpost.author}
-      <p>
-        <h:outputText value="#{blogpost.content}" escape="false" />
-      </p>
-      <hr />
+      <article>
+        <h1>#{blogpost.title}</h1>
+        <small>Published <time>#{blogpost.publishTime}</time> by #{blogpost.author}</small>
+        <section class="content">
+          <h:outputText value="#{blogpost.content}" escape="false" />
+        </section>
+      </article>
     </p:dataList>
   </h:body>
 </html>

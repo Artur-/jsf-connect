@@ -6,26 +6,16 @@
   xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
   xmlns:sec="http://www.springframework.org/security/tags"
 >
-  <style>
-    .navi { display: flex; } .navi > li { display: block; padding-right: 2em; }
-  </style>
   <h:form>
-    <ul class="navi">
-      <sec:authorize access="hasRole('ROLE_USER')">
-        <li>
-          <a href="#{request.contextPath}/admin/blogpost.xhtml">New blog posts</a>
-        </li>
-      </sec:authorize>
-      <sec:authorize access="hasRole('ROLE_ADMIN')">
-        <li>
-          <a href="#{request.contextPath}/admin/blog-admin.xhtml">Blog posts</a>
-        </li>
-      </sec:authorize>
-      <li>
-        <a href="#{request.contextPath}/logout">Logout</a>
-      </li>
-    </ul>
+      <header>
+          <h4>JSF Connect</h4>
+            <sec:authorize access="hasRole('ROLE_USER')">
+                <a href="#{request.contextPath}/admin/blogpost.xhtml">New blog post</a>
+            </sec:authorize>
+            <sec:authorize access="hasRole('ROLE_ADMIN')">
+                <a href="#{request.contextPath}/admin/blog-admin.xhtml">Blog posts</a>
+            </sec:authorize>
+            <a href="#{request.contextPath}/logout">Logout</a>
+        </header>
   </h:form>
-
-  <hr />
 </ui:composition>

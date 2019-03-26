@@ -9,17 +9,18 @@
   xmlns:sec="http://www.springframework.org/security/tags"
 >
   <h:head>
-    <title>PrimeFaces Hello World Example</title>
+    <title>New entry | JSF Connect</title>
+    <link rel="stylesheet" href="#{request.contextPath}/css/main.css" />
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans:700|PT+Serif" rel="stylesheet" />
     <h:outputStylesheet name="/css/main.css" />
   </h:head>
 
   <h:body>
     <ui:include src="menu.xhtml" />
-    <h1>New blog post</h1>
     <h:form>
       <p>
-        <label for="title">Title</label>
-        <p:inputText id="title" value="#{blogpostView.item.title}" />
+        <label for="title">New Blog post</label><br/>
+        <p:inputText id="title" class="title" placeholder="Title" value="#{blogpostView.item.title}" />
       </p>
       <p>
         <label for="content">Content</label>

@@ -9,7 +9,7 @@
   xmlns:sec="http://www.springframework.org/security/tags"
 >
   <h:head>
-    <title>PrimeFaces Hello World Example</title>
+    <title>Admin | JSF Connect</title>
     <link rel="stylesheet" href="#{request.contextPath}/css/main.css" />
     <script
       src="#{request.contextPath}/node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"
@@ -18,11 +18,13 @@
       type="module"
       src="#{request.contextPath}/web_modules/@vaadin/vaadin-grid.js"
     ></script>
+    <link rel="stylesheet" href="#{request.contextPath}/css/main.css" />
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans:700|PT+Serif" rel="stylesheet" />
   </h:head>
 
   <h:body>
     <ui:include src="menu.xhtml" />
 
-    Welcome to the administrative pages
+    <h1>Welcome to the administrative pages</h1>
   </h:body>
 </html>
