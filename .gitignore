@@ -2,3 +2,7 @@
 target
 node_modules
 web_modules
+node
+.project
+.settings
+.classpath
